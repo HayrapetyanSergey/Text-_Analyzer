@@ -32,8 +32,11 @@ def common_word(filepath):
                 single_words.append(words[i])
                 count_single_words.append(words.count(words[i]))
         common = max(count_single_words)
-        ind = count_single_words.index(common)
-        return single_words[ind]
+        if common != 1:
+            ind = count_single_words.index(common) 
+            return single_words[ind]
+        elif common == 1:
+            return 0
 
 def common_letters(filepath):
     count_of_letters = []
@@ -45,5 +48,8 @@ def common_letters(filepath):
                 single_letters.append(lst[i])
                 count_of_letters.append(lst.count(lst[i]))
         common = max(count_of_letters)
-        ind = count_of_letters.index(common)
-        return single_letters[ind]
+        if common != 1:
+            ind = count_of_letters.index(common)
+            return single_letters[ind]
+        else:
+            return 0
